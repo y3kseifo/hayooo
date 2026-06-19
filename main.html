@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Haya ❤️</title>
+<title>Haya ❤️ Us</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -15,253 +15,228 @@
 }
 
 body{
-    overflow:hidden;
     height:100vh;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(-45deg,#ff5f9e,#ff8dc7,#c86cff,#6f7cff);
+    background:linear-gradient(-45deg,#ff4d8d,#6c5ce7,#00c2ff,#ffb3d9);
     background-size:400% 400%;
-    animation:gradient 12s ease infinite;
+    animation:bg 12s ease infinite;
 }
 
-@keyframes gradient{
+@keyframes bg{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
 
-/* Floating Background Blur */
-.blur{
+/* blobs */
+.blob{
     position:absolute;
     border-radius:50%;
-    filter:blur(80px);
-    opacity:.5;
+    filter:blur(90px);
+    opacity:.6;
 }
 
-.blur1{
-    width:300px;
-    height:300px;
-    background:#ff7eb3;
-    top:-100px;
-    left:-100px;
+.blob1{
+    width:300px;height:300px;
+    background:#ff4d8d;
+    top:-100px;left:-100px;
 }
 
-.blur2{
-    width:350px;
-    height:350px;
-    background:#8b7dff;
-    bottom:-120px;
-    right:-100px;
+.blob2{
+    width:350px;height:350px;
+    background:#6c5ce7;
+    bottom:-120px;right:-120px;
 }
 
-/* Main Card */
+/* CARD */
 .card{
     width:90%;
-    max-width:700px;
-    padding:50px;
-    border-radius:35px;
+    max-width:650px;
     text-align:center;
+    padding:50px;
+    border-radius:30px;
 
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.25);
 
-    box-shadow:
-    0 8px 32px rgba(0,0,0,.2),
-    inset 0 0 20px rgba(255,255,255,.1);
-
-    animation:cardIn 1.5s ease;
-}
-
-@keyframes cardIn{
-    from{
-        opacity:0;
-        transform:translateY(40px) scale(.8);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
+    box-shadow:0 10px 40px rgba(0,0,0,0.2);
 }
 
 h1{
     font-family:'Pacifico',cursive;
-    font-size:4.8rem;
+    font-size:4rem;
     color:white;
-    text-shadow:
-    0 0 15px rgba(255,255,255,.8),
-    0 0 30px #ff8dc7;
-}
-
-.name{
-    color:#ffdbeb;
+    text-shadow:0 0 20px rgba(255,255,255,.8);
 }
 
 .heart{
     display:inline-block;
-    animation:heartbeat 1.1s infinite;
+    animation:beat 1s infinite;
 }
 
-@keyframes heartbeat{
+@keyframes beat{
     0%,100%{transform:scale(1);}
-    25%{transform:scale(1.3);}
-    50%{transform:scale(1);}
-    75%{transform:scale(1.4);}
+    50%{transform:scale(1.3);}
 }
 
-.message{
-    margin-top:15px;
+.subtitle{
     color:white;
-    font-size:1.2rem;
-    opacity:.9;
+    margin-top:10px;
 }
 
+/* button */
 button{
-    margin-top:30px;
-    padding:14px 35px;
+    margin-top:20px;
+    padding:12px 28px;
     border:none;
     border-radius:50px;
-    font-size:1rem;
     font-weight:600;
     cursor:pointer;
     background:white;
-    color:#ff5f9e;
+    color:#ff4d8d;
     transition:.3s;
 }
 
 button:hover{
-    transform:translateY(-4px) scale(1.05);
-    box-shadow:0 10px 25px rgba(255,255,255,.4);
+    transform:scale(1.08);
 }
 
-/* Love Letter */
-.letter{
-    margin-top:25px;
-    max-height:0;
-    overflow:hidden;
+/* timer */
+.timer{
+    margin-top:20px;
     color:white;
-    transition:1s;
     font-size:1.1rem;
-    line-height:1.8;
+    display:none;
 }
 
-.letter.show{
-    max-height:300px;
-    margin-top:30px;
-}
-
-/* Floating Hearts */
-.floating{
+/* hearts */
+.float{
     position:absolute;
-    pointer-events:none;
     animation:floatUp linear forwards;
 }
 
 @keyframes floatUp{
-    from{
-        transform:translateY(0) rotate(0deg);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-120vh) rotate(360deg);
-        opacity:0;
-    }
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-120vh);opacity:0;}
 }
 
-/* Twinkling Stars */
-.star{
-    position:absolute;
+/* 💖 BITMOJI BADGE */
+.bitmoji-badge{
+    position:fixed;
+    top:15px;
+    left:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 14px;
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.3);
+
     color:white;
-    animation:twinkle 2.5s infinite;
+    font-weight:600;
+    font-size:0.9rem;
+
+    box-shadow:0 0 20px rgba(255,255,255,0.3);
+    animation:pulse 2s infinite;
+    text-decoration:none;
 }
 
-@keyframes twinkle{
-    0%,100%{
-        opacity:.3;
-        transform:scale(.7);
-    }
-    50%{
-        opacity:1;
-        transform:scale(1.3);
-    }
+.bitmoji-badge img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
 }
 </style>
 </head>
+
 <body>
 
-<div class="blur blur1"></div>
-<div class="blur blur2"></div>
+<!-- 💖 BITMOJI CORNER -->
+<a class="bitmoji-badge" href="https://ibb.co/KpytYDFd" target="_blank">
+    <img src="https://i.ibb.co/HDHp776Z/Screen-Shot-2026-06-19-at-5-55-49-PM-removebg-preview.png">
+    Seifoo Loves Hayoo 💖
+</a>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
 
 <div class="card">
-    <h1>
-        I Love <span class="name">Haya</span>
-        <span class="heart">❤️</span>
-    </h1>
+    <h1>Haya <span class="heart">❤️</span></h1>
+    <p class="subtitle">Every second with you feels unreal ✨</p>
 
-    <p class="message">
-        Every moment feels a little brighter because of you ✨
-    </p>
+    <button onclick="toggleTimer()">💖 How long have we been dating?</button>
 
-    <button onclick="openLetter()">
-        Open My Heart 💌
-    </button>
-
-    <div class="letter" id="letter">
-        Dear Haya ❤️<br><br>
-
-        You are the smile I never want to lose,
-        the thought that makes every day feel special,
-        and the reason my heart skips a beat sometimes. 💖<br><br>
-
-        No matter how ordinary a day may seem,
-        you somehow make it extraordinary. ✨🌸<br><br>
-
-        Forever your biggest fan. ❤️
-    </div>
+    <div class="timer" id="timer"></div>
 </div>
 
 <script>
-function createHeart(){
-    const item=document.createElement("div");
+const startDate = new Date("June 16, 2026 15:00:00");
 
-    const emojis=["❤️","💖","💕","💗","💞","🌸","✨"];
-    item.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+function format(ms){
+    let s=Math.floor(ms/1000);
 
-    item.classList.add("floating");
-    item.style.left=Math.random()*window.innerWidth+"px";
-    item.style.bottom="-30px";
-    item.style.fontSize=(20+Math.random()*35)+"px";
-    item.style.animationDuration=(4+Math.random()*4)+"s";
+    const Y=31536000, M=2629800, W=604800,
+          D=86400, H=3600, MIN=60;
 
-    document.body.appendChild(item);
+    let y=Math.floor(s/Y); s%=Y;
+    let m=Math.floor(s/M); s%=M;
+    let w=Math.floor(s/W); s%=W;
+    let d=Math.floor(s/D); s%=D;
+    let h=Math.floor(s/H); s%=H;
+    let min=Math.floor(s/MIN); s%=MIN;
 
-    setTimeout(()=>{
-        item.remove();
-    },8000);
+    let out=[];
+    if(y>0) out.push(y+" YEAR");
+    if(m>0) out.push(m+" MONTH");
+    if(w>0) out.push(w+" WEEK");
+    if(d>0) out.push(d+" DAY");
+    if(h>0) out.push(h+" HR");
+    if(min>0) out.push(min+" MIN");
+
+    out.push(s+" SEC");
+
+    return out.join(" : ");
 }
 
-setInterval(createHeart,250);
+function update(){
+    document.getElementById("timer").innerHTML =
+        "💞 Together for:<br><b>" + format(Date.now()-startDate) + "</b>";
+}
 
-function openLetter(){
-    document.getElementById("letter").classList.toggle("show");
+setInterval(update,1000);
 
-    for(let i=0;i<40;i++){
-        setTimeout(createHeart,i*50);
+function toggleTimer(){
+    const t=document.getElementById("timer");
+    t.style.display = t.style.display==="block" ? "none" : "block";
+
+    for(let i=0;i<20;i++){
+        setTimeout(()=>{
+            const e=document.createElement("div");
+            e.className="float";
+            e.innerHTML=["❤️","💖","✨","💕"][Math.floor(Math.random()*4)];
+            e.style.left=Math.random()*100+"vw";
+            e.style.fontSize=(20+Math.random()*25)+"px";
+            e.style.bottom="-20px";
+            e.style.animationDuration=(3+Math.random()*3)+"s";
+            document.body.appendChild(e);
+            setTimeout(()=>e.remove(),6000);
+        },i*80);
     }
-}
-
-for(let i=0;i<40;i++){
-    const star=document.createElement("div");
-    star.classList.add("star");
-    star.innerHTML="✦";
-
-    star.style.left=Math.random()*100+"vw";
-    star.style.top=Math.random()*100+"vh";
-    star.style.animationDelay=Math.random()*3+"s";
-
-    document.body.appendChild(star);
 }
 </script>
 
