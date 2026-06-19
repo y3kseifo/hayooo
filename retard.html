@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Needs To Wrap It Up 😭</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#111,#222,#333);
+    color:white;
+}
+
+.container{
+    text-align:center;
+    animation:pop 1s ease;
+}
+
+h1{
+    font-size:4rem;
+    color:#ff4d4d;
+    text-shadow:0 0 20px #ff4d4d;
+    animation:shake 1.5s infinite;
+}
+
+p{
+    font-size:1.5rem;
+    opacity:0.9;
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes shake{
+    0%,100%{transform:translateX(0);}
+    25%{transform:translateX(-5px);}
+    50%{transform:translateX(5px);}
+    75%{transform:translateX(-5px);}
+}
+
+.emoji{
+    position:absolute;
+    font-size:2rem;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚨 NGA AHMED 🚨</h1>
+    <p>Bro needs to wrap it up 😭🙏</p>
+    <p>The meeting ended 3 hours ago.</p>
+    <p>We're all trying to go home. 💀</p>
+</div>
+
+<script>
+const emojis = ["😭","💀","🤦","🙏","🚨"];
+
+function createEmoji(){
+    const e = document.createElement("div");
+    e.className = "emoji";
+    e.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+    e.style.left = Math.random()*100 + "vw";
+    e.style.animationDuration = (3 + Math.random()*4) + "s";
+
+    document.body.appendChild(e);
+
+    setTimeout(()=>{
+        e.remove();
+    },7000);
+}
+
+setInterval(createEmoji,250);
+</script>
+
+</body>
+</html>
